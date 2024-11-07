@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 const cors = require('cors'); 
+const path = require('path');
 const conductoresRoutes = require('./routes/conductores');
 
 dotenv.config();
@@ -54,6 +55,9 @@ const swaggerOptions = {
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+
+// Servir archivos estáticos de Swagger
+app.use('/swagger', express.static(path.join(__dirname, 'node_modules/swagger-ui-dist')));
 
 // Rutas de la API
 app.use('/api/conductores', conductoresRoutes);
