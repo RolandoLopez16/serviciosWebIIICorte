@@ -35,8 +35,7 @@ const swaggerOptions = {
       version: '1.0.0',
       description: 'API para gestionar conductores',
       contact: {
-        name: 'Rolando',
-        email: 'contacto@ejemplo.com'
+        name: 'Rolando'
       },
       license: {
         name: 'MIT',
@@ -45,7 +44,7 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: 'https://apiservi-96i373zox-rolandos-projects-9705129c.vercel.app',
+        url: 'https://apiservi.vercel.app/',
         description: 'Servidor de Producción en Vercel'
       }
     ]
