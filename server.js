@@ -13,8 +13,10 @@ const app = express();
 
 // Configuración de CORS para permitir solicitudes desde el frontend en localhost:3000
 app.use(cors({
-  origin: 'http://localhost:3000'
+  origin: '*', // Permitir cualquier origen
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'] // Permitir todos los métodos
 }));
+
 
 // Middleware para analizar el cuerpo de las solicitudes en formato JSON
 app.use(bodyParser.json());
